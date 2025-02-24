@@ -1,0 +1,28 @@
+import static java.lang.System.out;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Roshambo
+{
+    public static void main(String[] args)
+    {
+        Scanner keyboard = new Scanner(System.in);
+        Random rand = new Random();
+        int myChoice;
+        out.println("Let's play Roshambo!");
+        out.print("What will you choose? (rock:1 paper:2 scissors:3");
+        myChoice = keyboard.nextInt();
+        out.println(" Give me a second to think!");
+        int botChoice = rand.nextInt(4);
+        if (botChoice == myChoice) {
+            out.println("It's a draw!");
+        }
+        if (botChoice == 1 && myChoice == 2 || botChoice == 2 && myChoice == 3 || botChoice == 3 && myChoice == 1) {
+            out.println("Ah man :( you win. I guess");
+        }
+        if (botChoice == 2 && myChoice == 1 || botChoice == 3 && myChoice == 2 || botChoice ==1 && myChoice == 3) {
+            out.println("Lets go!! I win!");
+        }
+    
+    }
+}
